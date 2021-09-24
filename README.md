@@ -5,22 +5,128 @@
 
 ### Soal no 1 Sebutkan webserver yang digunakan pada "ichimarumaru.tech"!
 Untuk mencari tahu web server yang digunakan. Dapat menggunakan display filter 
-```http.host == ichimarumaru.tech```
+
+```
+http.host == ichimarumaru.tech
+```
+
 ![nomer 1](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/1a.PNG?raw=true)
+
 lalu **CTRL + ALT + SHIFT + T** (klik kanan ==> follow ==> TCP Stream)
-```tcp.stream eq 12```
+
+```
+tcp.stream eq 12
+```
+
+![nomer 1](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/1b.PNG?raw=true)
+
+sehingga didapatkan web server dari web tersebut adalah
+> nginx/1.18.0 (ubuntu)
+
 
 ### Soal no 2 Temukan paket dari **web-web** yang menggunakan **basic authentication** method!
+Untuk menemukan paket tersebut dapat menggunakan display filter
+
+```
+http.authbasic
+```
+
+sehingga paket - paket yang didapatkan adalah sebagai berikut
+
+![nomer 2](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/2.PNG?raw=true)
+
 
 ### Soal no 3 Ikuti perintah di basic.ichimarumaru.tech! Username dan password bisa didapatkan dari file .pcapng!
+Untuk mendapatkan username dan password dari web tersebut, dapat menggukana filter 
+
+```
+http.host == basic.ichimarumaru.tech
+```
+
+lalu pilih paket no 2066
+
+kemudian lihat paket detail (Authorization ==> Credentials) maka didapatkan username:password
+
+> kuncimenujulautan:tQKEJFbgNGC1NCZlWAOjhyCOm6o3xEbPkJhTciZN
+
+![nomer 3](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/3a.PNG?raw=true)
+
+Kemudian diminta untuk menyebutkan konfigurasi pengkabelan T568A
+
+![nomer 3](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/3b.PNG?raw=true)
+
 
 ### Soal no 4 Temukan paket mysql yang mengandung perintah query select!
+untuk menemukan paket tersebut dapat menggunakan filter
+
+```
+mysql.query matches select
+```
+
+![nomer 4](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/4.PNG?raw=true)
+
 
 ### Soal no 5 Login ke portal.ichimarumaru.tech kemudian ikuti perintahnya! Username dan password bisa didapat dari query insert pada table users dari file .pcap!
+Untuk mendapatkan username dan passwordnya dapat menggunakan filter
+
+```
+mysql.query matches insert
+```
+
+dapat dilihat pada detail paket tertera username dan juga passwordnya
+
+> Username : akakanomi
+>
+> Password : pemisah4lautan
+
+![nomer 5](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/5a.PNG?raw=true)
+
+setelah berhasil login, kita diminta untuk menyebutkan urutan konfigurasi pengkabelan T568B
+
+![nomer 5](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/5b.PNG?raw=true)
+
 
 ### Soal no 6 Cari username dan password ketika melakukan login ke FTP Server!
+untuk mendapatkan username dan password dapat menggunakan display filter 
+
+```
+ftp.request.command == PASS || ftp.request.command == USER
+```
+
+dan kita akan mendapatkan username dan juga passwordnya
+
+> USER secretuser
+>
+> PASS aku.pengen.pw.aja
+
+![nomer 6](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/6.PNG?raw=true)
+
 
 ### Soal no 7 Ada 500 file zip yang disimpan ke FTP Server dengan nama 0.zip, 1.zip, 2.zip, ..., 499.zip. Simpan dan Buka file pdf tersebut. (Hint = nama pdf-nya "Real.pdf")
+untuk mengetahui file yang benar dapat menggunakan display filter 
+
+```
+ftp-data contains Real.pdf
+```
+
+![nomer 7](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/7a.PNG?raw=true)
+
+setelah mendapatkan paketnya, lalu **CTRL + ALT + SHIFT + T** (klik kanan ==> follow ==> TCP Stream) 
+
+```
+tcp.stream eq 128
+```
+
+![nomer 7](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/7b.PNG?raw=true)
+
+kemudian ubah `show data as` menjadi RAW ==> save as zip file
+
+![nomer 7](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/7c.PNG?raw=true)
+
+setelah dibuka isinya adalah sebagai berikut
+
+![nomer 7](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/7d.PNG?raw=true)
+
 
 ### Soal no 8 Cari paket yang menunjukan pengambilan file dari FTP tersebut!
 
