@@ -140,8 +140,43 @@ setelah dijalankan  display filter maka akan muncul seperti dibawah ini
 tidak ada yang muncul pada wireshark setelah dijalankan display filter tersebut
 
 ### Soal no 9 Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Salah satunya adalah sebuah file berisi data rahasia dengan nama "secret.zip". Simpan dan buka file tersebut!
+pertama untuk mencari file rahasia yang bernama "secret.zip" dapat menggunakan display filter
+```
+ftp-data.command contains "secret.zip"
+```
+![nomer 9](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/9a.PNG?raw=true)
+lalu setelah dijalankan display filter klik kanan dan follow tcp stream maka akan muncul seperti berikut
+![nomer 9](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/9b.PNG?raw=true)
+
+kemudian ubah data menjadi raw dan simpan menjadi file .zip
+![nomer 9](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/9d.PNG?raw=true)
 
 ### Soal no 10 Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server tersebut! Gunakan isi dari "history.txt" untuk menemukan password untuk membuka file rahasia yang ada di "secret.zip"!
+
+untuk mendapatkan password dari file yang telah kita download dari nomor 9, kita diperintahkan untuk menggunakan isi dari "history.txt". Sama seperti sebelumnya kita menggunakan display filter berikut
+
+```
+ftp-data.command contains "history.txt"
+```
+![nomer 10](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/10a.PNG?raw=true)
+
+setelah itu kita follow tcp stream dan muncul seperti berikut
+
+![nomer 10](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/10b.PNG?raw=true)
+
+kita akan melihat file bernama "bukanapaapa.txt" maka kita mencari file tersebut dengan display filter yang pernah kita gunakan sebelumnya.
+```
+ftp-data.command contains "bukanapaapa.txt"
+```
+![nomer 10](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/10c.PNG?raw=true)
+
+lalu kita follow tcp stream
+![nomer 10](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/10d.PNG?raw=true)
+kita akan menemukan password dari isi file .zip sebelumnya dan dapat kita masukkan ke .zip 
+![nomer 10](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/10e.PNG?raw=true)
+
+dan akan muncul gambar wanted luffy
+![nomer 10](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/10f.PNG?raw=true)
 
 ### Soal no 11 Filter sehingga wireshark hanya mengambil paket yang berasal dari port 80!
 Untuk memfilter agar wireshark hanya mengambil paket yang berasal dari port 80 maka pada capture filter diberikan filter: 
