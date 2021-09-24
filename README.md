@@ -129,6 +129,15 @@ setelah dibuka isinya adalah sebagai berikut
 
 
 ### Soal no 8 Cari paket yang menunjukan pengambilan file dari FTP tersebut!
+untuk mencari paket yang menunjukan pengambilan file dari ftp tersebut dapat menggunakan display filter 
+```
+ftp.request.command == RETRR
+```
+setelah dijalankan  display filter maka akan muncul seperti dibawah ini
+
+![nomer 8](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/8.PNG?raw=true)
+
+tidak ada yang muncul pada wireshark setelah dijalankan display filter tersebut
 
 ### Soal no 9 Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Salah satunya adalah sebuah file berisi data rahasia dengan nama "secret.zip". Simpan dan buka file tersebut!
 
