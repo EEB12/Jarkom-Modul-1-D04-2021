@@ -148,7 +148,7 @@ ftp-data.command contains "secret.zip"
 lalu setelah dijalankan display filter klik kanan dan follow tcp stream maka akan muncul seperti berikut
 ![nomer 9](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/9b.PNG?raw=true)
 
-kemudian ubah data menjadi raw dan simpan menjadi file .zip
+kemudian ubah data menjadi raw dan simpan menjadi file .zip dan pada .zip tersebut terdapat file wanted.pdf yang terkunci 
 ![nomer 9](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/9d.PNG?raw=true)
 
 ### Soal no 10 Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server tersebut! Gunakan isi dari "history.txt" untuk menemukan password untuk membuka file rahasia yang ada di "secret.zip"!
