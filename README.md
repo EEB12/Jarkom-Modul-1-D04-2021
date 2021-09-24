@@ -6,7 +6,7 @@
 ### Soal no 1 Sebutkan webserver yang digunakan pada "ichimarumaru.tech"!
 Untuk mencari tahu web server yang digunakan. Dapat menggunakan display filter 
 ```http.host == ichimarumaru.tech```
-![nomer 1](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/1a.png?raw=true)
+![nomer 1](https://github.com/EEB12/Jarkom-Modul-1-D04-2021/blob/main/images/1a.PNG?raw=true)
 lalu **CTRL + ALT + SHIFT + T** (klik kanan ==> follow ==> TCP Stream)
 ```tcp.stream eq 12```
 
